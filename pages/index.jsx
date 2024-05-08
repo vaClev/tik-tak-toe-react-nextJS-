@@ -1,17 +1,26 @@
 import { Header } from "../components/header";
 import { Game } from "../components/game-new";
-import { UiTextField } from "../components/uikit/ui-text-field";
+import { UiTextField } from "../components/uikit/fields/ui-text-field";
+import { UiSelectField } from "../components/uikit/fields/ui-select-field";
+import { UiSuperSelect } from "../components/uikit/fields/ui-superSelectHEADLESS";
 
 export default function HomePage() {
   return (
     <HomePageLayout header={<Header />}>
-      <Game />
+      {/* <Game /> */}
       <UiTextField
         label="Email"
         required
-        placeholder="placeholder"
+        placeholder="example@ascon.ru"
         helperText="Helper text"
         /* errorText="bad" */
+      />
+      <UiSelectField
+        className="mt-1"
+        label="Game type"
+        required
+        helperText="Helper text"
+        options={["2 игрока", "4 игрока"]}
       />
     </HomePageLayout>
   );
